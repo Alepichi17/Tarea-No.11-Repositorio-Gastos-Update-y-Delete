@@ -44,4 +44,4 @@ O desde la terminal:
 ![Captura 5](Capturas/Cap5.png)
 
 ## Video Explicativo
-- https://drive.google.com/drive/folders/1MtJjSYztxB6RpsTb7D-Lcy4EnNPKYvsq?usp=sharing
+- https://drive.google.com/file/d/1UsZk94Ksv8iuENhrU6caD1t6iz0wTdSW/view?usp=sharing
