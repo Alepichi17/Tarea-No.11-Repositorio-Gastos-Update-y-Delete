@@ -1,0 +1,12 @@
+﻿﻿USE GastosDB;
+GO
+
+DELETE Gastos
+WHERE Id IN (2001)
+
+DBCC CHECKIDENT (Gastos, NORESEED)
+
+SELECT MAX(Id) AS UltimoId
+FROM Gastos;
+
+DBCC CHECKIDENT (Gastos, RESEED, 2);

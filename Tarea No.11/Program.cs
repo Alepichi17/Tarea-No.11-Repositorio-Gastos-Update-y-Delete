@@ -75,24 +75,37 @@ namespace Tarea_No._11
             repo.Insertar(new Gasto { descripcion = descripcion, monto = monto, categoria = Categoria });
 
         }
+       
         public static void ListarEnSqlServer(GastoRepositorio repo)
         {
             Console.WriteLine();
-            List<Gasto> lista = repo.ListarGastos();
-            if (lista.Count == 0)
-            {
-                Console.WriteLine("No Hay Productos en SQL Server");
-                return;
-            }
 
-            decimal TotalGastado = 0;
-            foreach (Gasto g in lista)
+            try
             {
-                Console.WriteLine(g);
-                TotalGastado += g.monto;
+                List<Gasto> lista = repo.ListarGastos();
+
+                if (lista.Count == 0)
+                {
+                    Console.WriteLine("No Hay Productos en SQL Server");
+                    return;
+                }
+
+                decimal TotalGastado = 0;
+
+                foreach (Gasto g in lista)
+                {
+                    Console.WriteLine(g);
+                    TotalGastado += g.monto;
+                }
+
+                Console.WriteLine($"Total Gastado: {TotalGastado}");
             }
-            Console.WriteLine($"Total Gastado: {TotalGastado}");
+            catch (SqlException ex)
+            {
+                Console.WriteLine($"Error al listar gastos en SQL Server: {ex.Message}");
+            }
         }
+
 
         public static void BuscarPorId(GastoRepositorio repo)
         {

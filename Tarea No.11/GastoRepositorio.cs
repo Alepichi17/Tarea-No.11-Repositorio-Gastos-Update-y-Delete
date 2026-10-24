@@ -11,7 +11,7 @@ namespace Tarea_No._11
     {
         private const string CadenaConexion =
           @"Server=(localdb)\MSSQLLocalDB;" +
-          @"Database=GastosDB;" +
+          @"Database=PruebaDB;" +
           @"Trusted_Connection=True;" +
           @"TrustServerCertificate=True;";
 
